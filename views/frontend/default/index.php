@@ -2,11 +2,26 @@
 <div class="site-index">
 
     <div class="jumbotron">
-        <h1>Kou Osl Yii2 App</h1>
+        <h1>Sipariş</h1>
 
-        <p class="lead">Örnek uygulamayı başarılı bir şekilde çalıştırdınız.</p>
-
-        <p><a class="btn btn-lg btn-success" href="#">Modüller ve konfürgasyon!</a></p>
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="" alt="Tepsi">
+          <div class="card-body">
+            Tepsi 1
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="" alt="Tepsi">
+          <div class="card-body">
+            Tepsi 2
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="" alt="Tepsi">
+          <div class="card-body">
+            Tepsi 3
+          </div>
+        </div>
     </div>
 
 </div>
