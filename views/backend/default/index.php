@@ -85,7 +85,7 @@
                         </tbody>
                     </table>
                   </div>
-                  <div class="card-footer btn" style="color: #d51919;">
+                  <div class="card-footer btn" style="background-color: #d51919; ">
                     Siparişi İptal Et
                   </div>
                 </div>
