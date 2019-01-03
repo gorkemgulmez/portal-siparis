@@ -1,6 +1,6 @@
 {
     "name": "kouosl/portal-siparis",
-    "description": "Sample module for KOUOSL PORTAL",
+    "description": "Siparis module for KOUOSL PORTAL",
     "type": "yii2-extension",
     "keywords": ["yii2", "yii 2", "siparis", "module", "modules"],
     "license": "BSD-3-Clause",
