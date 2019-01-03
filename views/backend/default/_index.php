@@ -2,7 +2,7 @@
 use kouosl\theme\helpers\Html;
 use kouosl\theme\widgets\Portlet;
 
-$this->title = 'Index Sample';
+$this->title = 'Siparis';
 $data['title'] = Html::encode($this->title);
 $this->params['breadcrumbs'][] = $this->title;
 
@@ -12,7 +12,5 @@ Portlet::begin(['title' => $this->title,'subTitle' => 'samples data','icon' => '
 
 echo $this->render('index');
 
+
 Portlet::end();
-
-
-

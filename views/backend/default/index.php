@@ -112,182 +112,19 @@
             </thead>
 
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>3</td>
-            <td>123</td>
-            <td>İptal</td>
-            <td>12.12.2018</td>
-            <td>
-                <span onclick="showCard()" class="glyphicon glyphicon-eye-open"></span>
-                <span class="glyphicon glyphicon-remove"></span>
-            </td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>3</td>
-            <td>421</td>
-            <td>Yolda</td>
-            <td>12.12.2019</td>
-            <td>
-                <span onclick="showCard()" class="glyphicon glyphicon-eye-open"></span>
-                <span class="glyphicon glyphicon-remove"></span>
-            </td>
-          </tr>
-          <tr>
-            <td>cell1_3</td>
-            <td>cell2_3</td>
-            <td>cell3_3</td>
-            <td>cell4_3</td>
-            <td>cell5_3</td>
-            <td>
-                <span onclick="showCard()" class="glyphicon glyphicon-eye-open"></span>
-                <span class="glyphicon glyphicon-remove"></span>
-            </td>
-          </tr>
-          <tr>
-            <td>cell1_4</td>
-            <td>cell2_4</td>
-            <td>cell3_4</td>
-            <td>cell4_4</td>
-            <td>cell5_4</td>
-            <td>
-                <span onclick="showCard()" class="glyphicon glyphicon-eye-open"></span>
-                <span class="glyphicon glyphicon-remove"></span>
-            </td>
-          </tr>
-          <tr>
-            <td>cell1_1</td>
-            <td>cell2_1</td>
-            <td>cell3_1</td>
-            <td>cell4_1</td>
-            <td>cell5_1</td>
-            <td>
-                <span onclick="showCard()" class="glyphicon glyphicon-eye-open"></span>
-                <span class="glyphicon glyphicon-remove"></span>
-            </td>
-          </tr>
-          <tr>
-            <td>cell1_2</td>
-            <td>cell2_2</td>
-            <td>cell3_2</td>
-            <td>cell4_2</td>
-            <td>cell5_2</td>
-            <td>
-                <span onclick="showCard()" class="glyphicon glyphicon-eye-open"></span>
-                <span class="glyphicon glyphicon-remove"></span>
-            </td>
-          </tr>
-          <tr>
-            <td>cell1_3</td>
-            <td>cell2_3</td>
-            <td>cell3_3</td>
-            <td>cell4_3</td>
-            <td>cell5_3</td>
-            <td>
-                <span onclick="showCard()" class="glyphicon glyphicon-eye-open"></span>
-                <span class="glyphicon glyphicon-remove"></span>
-            </td>
-          </tr>
-          <tr>
-            <td>cell1_4</td>
-            <td>cell2_4</td>
-            <td>cell3_4</td>
-            <td>cell4_4</td>
-            <td>cell5_4</td>
-            <td>
-                <span onclick="showCard()" class="glyphicon glyphicon-eye-open"></span>
-                <span class="glyphicon glyphicon-remove"></span>
-            </td>
-          </tr>
-          <tr>
-            <td>cell1_1</td>
-            <td>cell2_1</td>
-            <td>cell3_1</td>
-            <td>cell4_1</td>
-            <td>cell5_1</td>
-            <td>
-                <span onclick="showCard()" class="glyphicon glyphicon-eye-open"></span>
-                <span class="glyphicon glyphicon-remove"></span>
-            </td>
-          </tr>
-          <tr>
-            <td>cell1_2</td>
-            <td>cell2_2</td>
-            <td>cell3_2</td>
-            <td>cell4_2</td>
-            <td>cell5_2</td>
-            <td>
-                <span onclick="showCard()" class="glyphicon glyphicon-eye-open"></span>
-                <span class="glyphicon glyphicon-remove"></span>
-            </td>
-          </tr>
-          <tr>
-            <td>cell1_3</td>
-            <td>cell2_3</td>
-            <td>cell3_3</td>
-            <td>cell4_3</td>
-            <td>cell5_3</td>
-            <td>
-                <span onclick="showCard()" class="glyphicon glyphicon-eye-open"></span>
-                <span class="glyphicon glyphicon-remove"></span>
-            </td>
-          </tr>
-          <tr>
-            <td>cell1_4</td>
-            <td>cell2_4</td>
-            <td>cell3_4</td>
-            <td>cell4_4</td>
-            <td>cell5_4</td>
-            <td>
-                <span onclick="showCard()" class="glyphicon glyphicon-eye-open"></span>
-                <span class="glyphicon glyphicon-remove"></span>
-            </td>
-          </tr>
-          <tr>
-            <td>cell1_1</td>
-            <td>cell2_1</td>
-            <td>cell3_1</td>
-            <td>cell4_1</td>
-            <td>cell5_1</td>
-            <td>
-                <span onclick="showCard()" class="glyphicon glyphicon-eye-open"></span>
-                <span class="glyphicon glyphicon-remove"></span>
-            </td>
-          </tr>
-          <tr>
-            <td>cell1_2</td>
-            <td>cell2_2</td>
-            <td>cell3_2</td>
-            <td>cell4_2</td>
-            <td>cell5_2</td>
-            <td>
-                <span onclick="showCard()" class="glyphicon glyphicon-eye-open"></span>
-                <span class="glyphicon glyphicon-remove"></span>
-            </td>
-          </tr>
-          <tr>
-            <td>cell1_3</td>
-            <td>cell2_3</td>
-            <td>cell3_3</td>
-            <td>cell4_3</td>
-            <td>cell5_3</td>
-            <td>
-                <span onclick="showCard()" class="glyphicon glyphicon-eye-open"></span>
-                <span class="glyphicon glyphicon-remove"></span>
-            </td>
-          </tr>
-          <tr>
-            <td>cell1_4</td>
-            <td>cell2_4</td>
-            <td>cell3_4</td>
-            <td>cell4_4</td>
-            <td>cell5_4</td>
-            <td>
-                <span onclick="showCard()" class="glyphicon glyphicon-eye-open"></span>
-                <span class="glyphicon glyphicon-remove"></span>
-            </td>
-          </tr>
+            <?php $i=1; foreach($orders as $item){ ?>
+                        <tr>
+                            <td><?php echo $item["order_id"]; ?></td>
+                            <td><?php echo $item["user_id"]; ?></td>
+                            <td><?php echo $item["product_id"]; ?></td>
+                            <td><?php echo $item["status"]; ?></td>
+                            <td><?php echo $item["order_date"]; ?></td>
+                            <td>
+                                <span onclick="showCard()" class="glyphicon glyphicon-eye-open"></span>
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </td>
+                        </tr>
+            <?php $i++; } ?>
         </tbody>
 
       </table>
