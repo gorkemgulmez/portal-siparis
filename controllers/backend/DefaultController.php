@@ -14,6 +14,6 @@ class DefaultController extends \kouosl\base\controllers\backend\BaseController
     public function actionIndex()
     {
         $orders = Yii::$app->db->createCommand('SELECT * FROM orders')->queryAll();
-        return $this->render('index', ['orders' => $orders]);
+        return $this->render('_index', ['orders' => $orders]);
     }
 }
