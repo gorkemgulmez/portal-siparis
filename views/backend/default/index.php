@@ -1,4 +1,5 @@
 <?= $this->title = 'Sipariş Admin Sayfası'; ?>
+<?php use kouosl\theme\helpers\Html; ?>
 <p> Başlamadan Önce Notları Okuyun </p>
 
 <style type="text/css">
@@ -92,12 +93,6 @@
             </div>
         </div>
 
-        <form class="formC">
-            <span style="padding-right: 10px;">Sipariş Ara:</span>
-            <input type="search" placeholder="Sipariş No">
-            <input type="submit" value="Ara">
-        </form>
-
         <table class="table">
 
             <thead>
@@ -121,7 +116,7 @@
                             <td><?php echo $item["order_date"]; ?></td>
                             <td>
                                 <span onclick="showCard()" class="glyphicon glyphicon-eye-open"></span>
-                                <span class="glyphicon glyphicon-remove"></span>
+                                <?= Html::a('X', ['class' => 'btn btn-success', 'delete-function', 'sID' => $item["order_id"]]) ?>
                             </td>
                         </tr>
             <?php $i++; } ?>
@@ -139,4 +134,5 @@
     function closeCard() {
         document.getElementById("overlay").style.display = "none";
     }
+
 </script>
