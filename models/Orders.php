@@ -36,14 +36,11 @@ class Orders extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['user_id', 'product_id', 'order_date', 'status', 'address', 'total_number'], 'required'],
             [['user_id', 'product_id', 'total_number'], 'integer'],
             [['order_date', 'arrive_date'], 'safe'],
             [['status'], 'string'],
             [['track_number'], 'string', 'max' => 20],
             [['address'], 'string', 'max' => 500],
-            [['user_id'], 'unique'],
-            [['product_id'], 'unique'],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
             [['product_id'], 'exist', 'skipOnError' => true, 'targetClass' => Product::className(), 'targetAttribute' => ['product_id' => 'product_id']],
         ];
