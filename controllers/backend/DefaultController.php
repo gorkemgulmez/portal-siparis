@@ -31,4 +31,18 @@ class DefaultController extends \kouosl\base\controllers\backend\BaseController
         $orders = Yii::$app->db->createCommand('SELECT * FROM orders')->queryAll();
         return $this->render('_index', ['orders' => $orders]);
     }
+
+    public function actionCancelFunction($sID){
+        if (isset($sID) && $sID!='') {
+            $orderItem = Orders::findOne($sID);
+            $orderItem->status = 'Iptal';
+            $orderItem->save();
+
+            $model = new Orders();
+            $userOrders = Yii::$app->db->createCommand("SELECT * FROM orders WHERE status='Yolda' and user_id=". Yii::$app->user->identity->id)->queryAll();
+            return $this->render('_index', ['model' => $model, 'userOrders' => $userOrders]);
+        }
+        return $this->goHome();
+
+    }
 }

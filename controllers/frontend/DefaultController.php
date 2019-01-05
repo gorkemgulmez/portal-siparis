@@ -28,6 +28,7 @@ class DefaultController extends \kouosl\base\controllers\frontend\BaseController
     {
         $model = new Orders();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            $model->user_id = Yii::$app->user->identity->id;
             if($model->save()) {
                 Yii::$app->session->setFlash('success', 'Başarılı.');
             }
@@ -39,5 +40,19 @@ class DefaultController extends \kouosl\base\controllers\frontend\BaseController
             $userOrders = Yii::$app->db->createCommand("SELECT * FROM orders WHERE status='Yolda' and user_id=". Yii::$app->user->identity->id)->queryAll();
             return $this->render('_index', ['model' => $model, 'userOrders' => $userOrders]);
         }
+    }
+
+    public function actionCancelFunction($sID){
+        if (isset($sID) && $sID!='') {
+            $orderItem = Orders::findOne($sID);
+            $orderItem->status = 'Iptal';
+            $orderItem->save();
+
+            $model = new Orders();
+            $userOrders = Yii::$app->db->createCommand("SELECT * FROM orders WHERE status='Yolda' and user_id=". Yii::$app->user->identity->id)->queryAll();
+            return $this->render('_index', ['model' => $model, 'userOrders' => $userOrders]);
+        }
+        return $this->goHome();
+
     }
 }
