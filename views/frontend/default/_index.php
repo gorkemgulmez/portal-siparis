@@ -63,7 +63,7 @@ td {
 
         <h2>Siparişleriniz</h2>
         <button type="button" class="btn btn-info collapsed" data-toggle="collapse" data-target="#add-menu" >Sipariş Ekle</button>
-        <div id="add-menu" class="collapse jumbotron">
+        <div id="add-menu" class="collapse jumbotron" style="width:50%; margin:0px auto;">
             <?php $form = ActiveForm::begin(['id' => 'contact-form','options' => ['enctype' => 'multipart/form-data']]); ?>
 
                 <?= $form->field($model, 'product_id')->textInput(['autofocus' => true]) ?>
@@ -115,24 +115,26 @@ td {
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-xs-6 col-md-3" style=" padding-top: 20px;">
-                    <img alt="Tepsi" class="img-thumbnail" src="https://www.trendyol.com/Content/images/defaultThumb.jpg" >
-                    <span >Sipariş No</span>
-                </div>
-
-                <div class="col-xs-6 col-md-5"> </div>
-
-                <div class="col-xs-6 col-md-4" >
-                    <div class="container">
-                        <span onclick="showCard()" class="glyphicon glyphicon-eye-open"></span>
+            <?php $i=1; foreach($userOrders as $item){ ?>
+                <div class="row">
+                    <div class="col-xs-6 col-md-3" style=" padding-top: 20px;">
+                        <img alt="Tepsi" class="img-thumbnail" src="https://www.trendyol.com/Content/images/defaultThumb.jpg" >
+                        <span ><?php echo $item["order_id"]; ?></span>
                     </div>
+
+                    <div class="col-xs-6 col-md-5"> </div>
+
+                    <div class="col-xs-6 col-md-4" >
                         <div class="container">
-                        <span> Sipariş Adı: Tepsi </span>
-                    </div>
+                            <span onclick="showCard()" class="glyphicon glyphicon-eye-open"></span>
+                        </div>
+                            <div class="container">
+                            <span> Sipariş Adı: Tepsi </span>
+                        </div>
 
+                    </div>
                 </div>
-            </div>
+            <?php $i++; } ?>
 
         </div>
 
