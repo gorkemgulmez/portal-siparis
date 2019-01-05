@@ -2,54 +2,6 @@
 <?php use kouosl\theme\helpers\Html; ?>
 <p> Başlamadan Önce Notları Okuyun </p>
 
-<style type="text/css">
-  thead{ background-color: #a6cf2b}
-  tbody{ overflow-y:auto; }
-  tbody{ overflow-y:auto; }
-  th { text-align: center; }
-  td { text-align: center; }
-
-  .formC {
-    text-align: left;
-    padding-right: 15px;
-    padding-bottom: 25px;
-  }
-
-  .close-button {
-      float: right;
-  }
-
-  .tableI {
-      background-color: #28d18f;
-      font-size: 12px;
-      text-align: left;
-  }
-
-  #overlay {
-      position: fixed;
-        display: none;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(0,0,0,0.5);
-        z-index: 2;
-        cursor: pointer;
-  }
-
-  #card-detail {
-      position: absolute;
-        top: 50%;
-        left: 50%;
-        font-size: 50px;
-        color: white;
-        transform: translate(-50%,-50%);
-        -ms-transform: translate(-50%,-50%);
-  }
-</style>
-
 <div class="site-index">
     <div class="jumbotron">
 
@@ -115,7 +67,7 @@
                             <td><?php echo $item["status"]; ?></td>
                             <td><?php echo $item["order_date"]; ?></td>
                             <td>
-                                
+
                                 <?= Html::a('X', ['class' => 'btn btn-success', 'delete-function', 'sID' => $item["order_id"]]) ?>
                             </td>
                         </tr>
@@ -125,14 +77,3 @@
       </table>
     </div>
 </div>
-
-<script type="text/javascript" >
-    function showCard() {
-        document.getElementById("overlay").style.display = "block";
-    }
-
-    function closeCard() {
-        document.getElementById("overlay").style.display = "none";
-    }
-
-</script>

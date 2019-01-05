@@ -1,6 +1,8 @@
 <?php
 use kouosl\theme\helpers\Html;
 use kouosl\theme\widgets\Portlet;
+use kouosl\theme\bundles\SiparisBackendAsset;
+SiparisBackendAsset::register($this);
 
 $this->title = 'Siparis';
 $data['title'] = Html::encode($this->title);

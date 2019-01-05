@@ -7,6 +7,9 @@ use kouosl\siparis\models\Orders;
 use kouosl\siparis\Module;
 
 
+use kouosl\theme\bundles\SiparisFrontendAsset;
+SiparisFrontendAsset::register($this);
+
 $this->title = 'Sipariş Sayfası';
 $data['title'] = Html::encode($this->title);
 $this->params['breadcrumbs'][] = $this->title;
