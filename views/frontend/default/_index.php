@@ -3,6 +3,9 @@ use kouosl\theme\helpers\Html;
 use kouosl\theme\widgets\Portlet;
 use yii\bootstrap\ActiveForm;
 use kouosl\siparis\models\Product;
+use kouosl\siparis\models\Orders;
+use kouosl\siparis\Module;
+
 
 $this->title = 'Sipariş Sayfası';
 $data['title'] = Html::encode($this->title);
@@ -35,7 +38,7 @@ td {
 
 #overlay {
     position: fixed;
-      display: none;
+    display: none;
       width: 100%;
       height: 100%;
       top: 0;
@@ -62,14 +65,19 @@ td {
 <div class="site-index">
     <div class="jumbotron">
 
-        <h2>Siparişleriniz</h2>
-        <button type="button" class="btn btn-info collapsed" data-toggle="collapse" data-target="#add-menu" >Sipariş Ekle</button>
+        <h2><?php
+        $lang = yii::$app->session->get('lang');
+        			\Yii::$app->language = $lang;
+        			yii::$app->session->set('lang',$lang);
+        			\Yii::$app->language = 'tr-TR'; // /iletisim sayfası default olarak kendini en-US ayarladığı için tr'yi belirtmek zorunda kaldım. Çeviri özelliği çalışıyor. Module.php ayarları yapıldı.
+                    echo Module::t('siparis','Orders');
+        ?></h2>
+        <button type="button" class="btn btn-info collapsed" data-toggle="collapse" data-target="#add-menu" ><?php echo Module::t('siparis','Add Order'); ?></button>
         <div id="add-menu" class="collapse jumbotron" style="width:50%; margin:0px auto;">
             <?php $form = ActiveForm::begin(['id' => 'contact-form','options' => ['enctype' => 'multipart/form-data']]); ?>
 
                 <?= $form->field($model, 'product_id')->textInput(['autofocus' => true]) ?>
                 <?= $form->field($model, 'address') ?>
-                <?= $form->field($model, 'user_id') ?>
                 <?= $form->field($model, 'total_number') ?>
                 <?= Html::submitButton('Gönder', ['class' => 'btn btn-success', 'name' => 'siparis-button']) ?>
             <?php ActiveForm::end(); ?>
@@ -79,7 +87,7 @@ td {
             <?php $i=1; foreach($userOrders as $item){ ?>
                 <div class="row">
                     <div class="col-xs-6 col-md-3" style=" padding-top: 20px;">
-                        <img alt="Tepsi" class="img-thumbnail" src="<?php echo Product::findOne( $item["order_id"])->image_url; ?>" >
+                        <img alt="Tepsi" class="img-thumbnail" src="<?php echo Product::findOne( $item["product_id"])->image_url ?>" >
                         <span ><?php echo $item["order_id"]; ?></span>
                     </div>
 
@@ -90,7 +98,7 @@ td {
                             <span onclick="showCard()" class="glyphicon glyphicon-eye-open"></span>
                         </div>
                             <div class="container">
-                            <span> Sipariş Adı: <?php echo Product::findOne( $item["order_id"])->product_name; ?> </span>
+                            <span> Sipariş Adı: <?php echo Product::findOne( $item["product_id"])->product_name; ?> </span>
                         </div>
 
                     </div>
@@ -101,36 +109,36 @@ td {
                         <div class="card text-center" style="margin: 30px" >
                           <div class="card-header" >
                             <span style="text-align: center;margin-left: 64px;">Sipariş Adı</span>
-                            <span class="btn close-button" onclick="closeCard()" >X</span>
+                            <span class="btn close-button" onclick="closeCard()">X</span>
                           </div>
                           <div class="card-body">
                             <table class="table">
                                 <tbody>
                                     <tr>
                                         <td>Sipariş Numarası</td>
-                                        <td>1</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Kullanıcı</td>
-                                        <td id="kul_ad">1</td>
+                                        <td><?php echo $item["order_id"]; ?></td>
                                     </tr>
                                     <tr>
                                         <td>Ürün No</td>
-                                        <td id="ürün">1</td>
+                                        <td><?php echo $item["product_id"]; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ürün Miktarı</td>
+                                        <td><?php echo $item["total_number"]; ?></td>
                                     </tr>
                                     <tr>
                                         <td>Durumu</td>
-                                        <td id="durum">1</td>
+                                        <td><?php echo $item["status"]; ?></td>
                                     </tr>
                                     <tr>
                                         <td>Alım Tarihi</td>
-                                        <td id="tarih">1</td>
+                                        <td><?php echo $item["order_date"]; ?></td>
                                     </tr>
                                 </tbody>
                             </table>
                           </div>
                           <div class="card-footer btn" style="background-color: #d51919;">
-                            Siparişi İptal Et
+                            <?= Html::a('Siparişi İptal Et', ['class' => 'btn btn-success', 'cancel-function', 'sID' => $item["order_id"]]) ?>
                           </div>
                         </div>
                     </div>
