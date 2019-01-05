@@ -2,6 +2,7 @@
 use kouosl\theme\helpers\Html;
 use kouosl\theme\widgets\Portlet;
 use yii\bootstrap\ActiveForm;
+use kouosl\siparis\models\Product;
 
 $this->title = 'Sipariş Sayfası';
 $data['title'] = Html::encode($this->title);
@@ -75,50 +76,10 @@ td {
         </div>
         <div class="container">
 
-            <div id="overlay" >
-                <div id="card-detail" style="background-color: #72bd34">
-                    <div class="card text-center" style="margin: 30px" >
-                      <div class="card-header" >
-                        <span style="text-align: center;margin-left: 64px;">Sipariş Adı</span>
-                        <span class="btn close-button" onclick="closeCard()" >X</span>
-                      </div>
-                      <div class="card-body">
-                        <table class="table">
-                            <tbody>
-                                <tr>
-                                    <td>Sipariş Numarası</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td>Kullanıcı</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td>Ürün No</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td>Durumu</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td>Alım Tarihi</td>
-                                    <td>1</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                      </div>
-                      <div class="card-footer btn" style="background-color: #d51919;">
-                        Siparişi İptal Et
-                      </div>
-                    </div>
-                </div>
-            </div>
-
             <?php $i=1; foreach($userOrders as $item){ ?>
                 <div class="row">
                     <div class="col-xs-6 col-md-3" style=" padding-top: 20px;">
-                        <img alt="Tepsi" class="img-thumbnail" src="https://www.trendyol.com/Content/images/defaultThumb.jpg" >
+                        <img alt="Tepsi" class="img-thumbnail" src="<?php echo Product::findOne( $item["order_id"])->image_url; ?>" >
                         <span ><?php echo $item["order_id"]; ?></span>
                     </div>
 
@@ -129,9 +90,49 @@ td {
                             <span onclick="showCard()" class="glyphicon glyphicon-eye-open"></span>
                         </div>
                             <div class="container">
-                            <span> Sipariş Adı: Tepsi </span>
+                            <span> Sipariş Adı: <?php echo Product::findOne( $item["order_id"])->product_name; ?> </span>
                         </div>
 
+                    </div>
+                </div>
+
+                <div id="overlay" >
+                    <div id="card-detail" style="background-color: #72bd34">
+                        <div class="card text-center" style="margin: 30px" >
+                          <div class="card-header" >
+                            <span style="text-align: center;margin-left: 64px;">Sipariş Adı</span>
+                            <span class="btn close-button" onclick="closeCard()" >X</span>
+                          </div>
+                          <div class="card-body">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td>Sipariş Numarası</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Kullanıcı</td>
+                                        <td id="kul_ad">1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ürün No</td>
+                                        <td id="ürün">1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Durumu</td>
+                                        <td id="durum">1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Alım Tarihi</td>
+                                        <td id="tarih">1</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                          </div>
+                          <div class="card-footer btn" style="background-color: #d51919;">
+                            Siparişi İptal Et
+                          </div>
+                        </div>
                     </div>
                 </div>
             <?php $i++; } ?>

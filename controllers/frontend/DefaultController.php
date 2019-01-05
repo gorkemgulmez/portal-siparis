@@ -36,7 +36,7 @@ class DefaultController extends \kouosl\base\controllers\frontend\BaseController
             }
             return $this->refresh();
         } else {
-            $userOrders = Yii::$app->db->createCommand("SELECT * FROM orders WHERE status='Yolda' and user_id=". 1)->queryAll();
+            $userOrders = Yii::$app->db->createCommand("SELECT * FROM orders WHERE status='Yolda' and user_id=". Yii::$app->user->identity->id)->queryAll();
             return $this->render('_index', ['model' => $model, 'userOrders' => $userOrders]);
         }
     }
