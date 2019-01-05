@@ -115,7 +115,7 @@
                             <td><?php echo $item["status"]; ?></td>
                             <td><?php echo $item["order_date"]; ?></td>
                             <td>
-                                <span onclick="showCard()" class="glyphicon glyphicon-eye-open"></span>
+                                
                                 <?= Html::a('X', ['class' => 'btn btn-success', 'delete-function', 'sID' => $item["order_id"]]) ?>
                             </td>
                         </tr>
