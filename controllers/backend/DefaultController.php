@@ -14,6 +14,11 @@ class DefaultController extends \kouosl\base\controllers\backend\BaseController
      */
     public function actionIndex()
     {
+        if(Yii::$app->user->identity->id != 1) {
+            Yii::$app->session->setFlash('error', 'Admin yekiniz bulunmamaktadır!');
+            return $this->render('emptyPage');
+        }
+        //else
         $orders = Yii::$app->db->createCommand('SELECT * FROM orders')->queryAll();
         return $this->render('_index', ['orders' => $orders]);
     }
