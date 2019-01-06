@@ -1,7 +1,20 @@
 # portal-siparis
 
+Sipariş modülünde kullanıcı sipariş ekleyebilir, silebilir ve ya durumunu güncelleyebilir.
+
+## Özellikler
+* Layout düzenledi.
+* Basit bir çeviri sistemi kuruldu
+* Widgetlar oluşturuldu
+* Css ve Js dosyaları eklendi.
+* Assetler oluşturuldu ve düzenledi
+* Kullanıcıya göre listeleme yapıldı ve bir kullanıcıya admin yetkisi verildi.
+* Admin olmayan kullanıcılar kısıtlamalar getirildi.
+
+
+
 ## Kurulum
-Sipariş modülünü portal web uygulamasına eklemek için /portal dizinindeki composer.json dosyasına aşağıdaki eklemeleri yapmamız gerekmektedir.
+Sipariş modülünü portal web uygulamasına eklemek için /portal dizinindeki composer.json dosyasına aşağıdaki eklemeleri yapmamız gerekebilir. Eğer portal klasörünü modüle ait depodan aldıysanız bu adımı geçebilirsiniz
 
 
 ```php
@@ -22,7 +35,11 @@ Sipariş modülünü portal web uygulamasına eklemek için /portal dizinindeki 
 ....
 ```
 
-portal-theme klasörünü de https://github.com/gorkemgulmez/portal-theme.git linkindeki dosyalar ile değiştirildikten sonra ise composer update yapılabilir.
+portal-theme klasörünü de https://github.com/gorkemgulmez/portal-theme.git linkindeki dosyalar ile değiştirildikten sonra ise portal dizininde aşağıdaki kod uygulanmalıdır. 
+
+```
+composer update
+```
 
 Modülün yüklenmesinin ardından kullanıcı ve yönetici panellerinin çalışması için gerekli olan "product" ve "orders" tablolarını, verilen migrationlar ile yükleyebiliriz. Bu tabloların portal ile gelen tablolar ile key bağlantısı olduğu için gerekli user tablosunun önceden yüklenmiş olması gerekmektedir.
 
@@ -44,19 +61,7 @@ Yukarıdaki gibi belirtilmiştir. Bunun dışında başlamadan önce /phpmyadmin
 İlk oluşturulan kullanıcı user id'sinden ötürü  admin sayılacaktır.
 
 
-## Özellikler
-* Layout düzenledi.
-* Basit bir çeviri sistemi kuruldu
-* Widgetlar oluşturuldu
-* Css ve Js dosyaları eklendi.
-* Assetler oluşturuldu ve düzenledi
-* Kullanıcıya göre listeleme yapıldı ve bir kullanıcıya admin yetkisi verildi.
-* Admin olmayan kullanıcılar kısıtlamalar getirildi.
-
-
 ## Tanıtım
--Siparis modülünde kullanıcı sipariş ekleyebilir, silebilir ve ya durumunu güncelleyebilir.
-
 * Modülümüzü kullanmak için giriş yaptıktan sonra sipariş sayfamızı açmaya hazırız. Bunun için navbarı ve ya verilen linki kullanabiliriz. <br />
 [Sipariş](http://portal.kouosl/siparis)
 ![alt tag](http://zekiesenalp.com/modul/1.png "Sipariş Sayfası")
