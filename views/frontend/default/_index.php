@@ -111,7 +111,7 @@ td {
                     <div id="card-detail" style="background-color: #72bd34">
                         <div class="card text-center" style="margin: 30px" >
                           <div class="card-header" >
-                            <span style="text-align: center;margin-left: 64px;">Sipariş Adı</span>
+                            <span style="text-align: center;margin-left: 64px;"><?php echo Product::findOne( $item["product_id"])->product_name ?></span>
                             <span class="btn close-button" onclick="closeCard()">X</span>
                           </div>
                           <div class="card-body">

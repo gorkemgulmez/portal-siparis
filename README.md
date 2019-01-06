@@ -1,7 +1,6 @@
-#portal-siparis
+# portal-siparis
 
-Kurulum
-============
+## Kurulum
 Sipariş modülünü portal web uygulamasına eklemek için /portal dizinindeki composer.json dosyasına aşağıdaki eklemeleri yapmamız gerekmektedir.
 
 
@@ -45,46 +44,45 @@ Yukarıdaki gibi belirtilmiştir. Bunun dışında başlamadan önce /phpmyadmin
 İlk oluşturulan kullanıcı user id'sinden ötürü  admin sayılacaktır.
 
 
-Özellikler
-============
-*Layout düzenledi.
-*Basit bir çeviri sistemi kuruldu
-*Widgetlar oluşturuldu
-*Css ve Js dosyaları eklendi.
-*Assetler oluşturuldu ve düzenledi
-*Kullanıcıya göre listeleme yapıldı ve bir kullanıcıya admin yetkisi verildi.
-*Admin olmayan kullanıcılar kısıtlamalar getirildi.
+## Özellikler
+* Layout düzenledi.
+* Basit bir çeviri sistemi kuruldu
+* Widgetlar oluşturuldu
+* Css ve Js dosyaları eklendi.
+* Assetler oluşturuldu ve düzenledi
+* Kullanıcıya göre listeleme yapıldı ve bir kullanıcıya admin yetkisi verildi.
+* Admin olmayan kullanıcılar kısıtlamalar getirildi.
 
 
-Tanıtım
-============
+## Tanıtım
 -Siparis modülünde kullanıcı sipariş ekleyebilir, silebilir ve ya durumunu güncelleyebilir.
 
-Modülümüzü kullanmak için giriş yaptıktan sonra sipariş sayfamızı açmaya hazırız. Bunun için navbarı ve ya verilen linki kullanabiliriz.
-http://portal.kouosl/siparis
-RESİM
+Modülümüzü kullanmak için giriş yaptıktan sonra sipariş sayfamızı açmaya hazırız. Bunun için navbarı ve ya verilen linki kullanabiliriz. <br />
+[Sipariş](http://portal.kouosl/siparis) <br />
+![alt tag](http://zekiesenalp.com/modul/1.jpg "Sipariş Sayfası")
 
-Kullanıcıdan ilk olarak bir siparişi oluşturması bekleniyor. Bunun için öncelikle Sipariş Ekle butonun tıklıyoruz. Açılan pencerede belirtilen alanları doldurduktan sonra siparişimizi ekliyoruz. Eğer her şey yolunda ise sayfamıza bir başarı bildirimi geliyor.
-RESİM
+Kullanıcıdan ilk olarak bir siparişi oluşturması bekleniyor. Bunun için öncelikle Sipariş Ekle butonun tıklıyoruz. Açılan pencerede belirtilen alanları doldurduktan sonra siparişimizi ekliyoruz. Eğer her şey yolunda ise sayfamıza bir başarı bildirimi geliyor. <br />
+![alt tag](http://zekiesenalp.com/modul/2.jpg "Sipariş Ekleme")
 
 Sayfa açıldıktan sonra kullanıcı eklediği siparişleri liste şeklinde görebilir.
-Eğer göz simgesine basarsa siparişin detaylarını açılır bir listede daha net bir şekilde görebilir. Ayrıca siparişini iptal edebilir.
-İptal edilen siparişler bu sayfada görüntülenemez.
-RESİM
+Eğer göz simgesine basarsa siparişin detaylarını açılır bir listede daha net bir şekilde görebilir. Ayrıca siparişini iptal edebilir. <br />
+İptal edilen siparişler bu sayfada görüntülenemez. <br />
+![alt tag](http://zekiesenalp.com/modul/3.jpg "Sipariş Detay")
 
 
-Modülde user idsi 1 olan kullanıcı admin yetkisine sahiptir. Üst kısımdaki navbardan ya da verilen linkten admin sayfasına girebilir.
-http://portal.kouosl/admin/siparis
-RESİM
+Modülde user idsi 1 olan kullanıcı admin yetkisine sahiptir. Üst kısımdaki navbardan ya da verilen linkten admin sayfasına girebilir. <br />
+[Admin/Sipariş](http://portal.kouosl/admin/siparis) <br />
+![alt tag](http://zekiesenalp.com/modul/4.jpg "Admin Paneli")
 
-Eğer yetkisi yoksa bu sayfayı görmek yerine bir hata mesajı alır.
-RESİM
+Eğer yetkisi yoksa bu sayfayı görmek yerine bir hata mesajı alır. <br />
+![alt tag](http://zekiesenalp.com/modul/5.jpg "Admin Hata")
 
 Admin bütün siparişleri bir liste halinde görebilir. İsterse bunları silebilir.
 
 
-Layout ve navbar resimdeki gibi değiştirilmiştir.
-RESİM
+Layout ve navbar resimdeki gibi değiştirilmiştir. <br />
+Kullanıcı admin değilse Admin/Sipariş sekmesini görmeyecektir. <br />
+![alt tag](http://zekiesenalp.com/modul/6.jpg "Layout")
 
 
 Çeviri için ise bir altyapı oluşturulmuştur. Çeviri için pek fazla kelime bulunmamaktadır. Ayrıca widget içindeki kelimeler çevirlememiştir.
